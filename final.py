@@ -1,6 +1,6 @@
 #EE, IA, CL, KT The Game Final
 
-print('You wake up on a table with four different doors but one door has three colored gem shaped divots\n on it. The fir and all the other doors are different colors with different titles on it.\nThe first door has cheetah print on it with a title that says "past". The\nsecond door is green with a title that says "present". The third door is\nblue with a title that says "future". You need to collect the gems from\neach room inorder to unlock the main door to get the trausure behind it.')
+print('You wake up on a table with four different doors but one door has three colored gem shaped divots\n on it. The first divot is brown, the second is green and the third is blue. All of the other doors are different colors with different titles on it.\nThe first door has cheetah print on it with a title that says "past". The\nsecond door is green with a title that says "present". The third door is\nblue with a title that says "future". You need to collect the gems from\neach room inorder to unlock the main door to get the trausure behind it.')
 
 choices = []
 
