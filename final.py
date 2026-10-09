@@ -46,4 +46,4 @@ if choice == "present":
       print("you chose oval office. around you you see find a revolver to get the gem. *hint: you might find it in the other choices")
 #CL
 if choice == "future":
-    print("You come to your first decition ")
+    print("You come to your first decition left, right, or forward. What do you choose.")
