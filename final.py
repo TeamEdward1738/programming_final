@@ -31,7 +31,8 @@ if door == "past":
         print("you chose cave. around you you see glowing crystals tucked into the rock, and when you turn a corner you see a huge flowing waterfall, stalagtites hang from above. Bright green moss covers the walls along with tall leafy plants with vibrant cherry red flowers. find a pickaxe to get the gem. *hint: you might find it in the other choices.")
         if pickaxe in inventory:
             look = input("you have 3 choices where do you want to look first (Waterfall, walls, plants): ").lower()
-            if look == 
+            if look == "waterfall":
+                print("You see gem")
     elif direction == "Forest":
         print()
 #EE
@@ -39,15 +40,42 @@ if door == "present":
    revolver= "revolver"
    place=input("You have 3 choices where do you want to go?: Oval Office, Lincoln Monument, National Art Gallery")
 
-   if place == "Oval Office"
+   if place == "Oval Office":
       print("you chose oval office. around you you see find a revolver to get the gem. *hint: you might find it in the other choices")
 #CL
 if door == "future":
-    decition1.l = ["left, right, or forward"]
-    decition1.2.l = ["left or right"]
-    decition1.2.3.l = ["left or right"]
-    decition1 = input(f"You come to your first decition {decition1.l}. What do you choose: ").lower()
-    if decition1 == "left":
-        decition1.2 = input("You come to a left or right decition. What do you choose: ").lower()
-        if decition1.2 == "left":
-            decition1.2.3 = input("You come to a {} decition")
+    computer = 1
+    lamp = 2
+    top_drawer = 3
+    middle_drawer = 4
+    bottom_drawer = 5
+    bed = 6
+    chair = 7
+    not_checked = [1,2,3,4,5,6,7]
+    nothing = "You found nothing"
+    while True:
+        decition1 = input(f"You come to your first decition, left, right, or forward. What do you choose: ").lower()
+        if decition1 == "left":
+            while True:
+                decition11 = input("You come to a left or right decition. What do you choose: ").lower()
+                if decition11 == "left":
+                    while True:
+                        decition111 = input("You come to a left or right decition. What do you choose: ").lower()
+                        if decition111 == "left":
+                            print("You are in a room with a (1)computer, (2)lamp, (3,4,5)desk with three drawers, (6)bed, (7)chair, and a (8)safe with three underscores blinking.")
+                            while True:
+                                puzzle1 = input("What do you check: ")
+                                if puzzle1.isnumeric():
+                                    if puzzle1 in not_checked:
+                                        if puzzle1 == 4:
+                                            print("You see '__9'.")
+                                            continue
+                                        elif puzzle1 == 1:
+                                            print("You break apart the computer and behind the mother drive you see '3__'.")
+                                            continue
+                                        elif puzzle1 == 2:
+                                            print(nothing)
+                                            continue
+                                else:
+                                    print("Type in your choice as the number shown.")
+                                    continue
