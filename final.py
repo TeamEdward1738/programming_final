@@ -3,16 +3,19 @@
 choices = []
 gems = []
 inventory = []
+with open ("inventory.txt","r") as file:
+#    content = file.read()
+#    inventory = idk fix this later
 
 # IA  
 
-print('You wake up on a table with four different doors but one door has three colored\ngem shaped divots on it. The first divot is brown, the second is green and the\nthird is blue. All of the other doors are different colors with different titles\non it. The first door has cheetah print on it with a title that says "past".\nThe second door is green with a title that says "present". The third door is\nblue with a title that says "future". You need to collect the gems from each\nroom inorder to unlock the main door to get the treasure behind it.')
+print('You wake up on a table with four different doors but one door has three colored\ngem shaped divots on it. The first divot is yelloe, the second is green and the\nthird is blue. All of the other doors are different colors with different titles\non it. The first door has cheetah print on it with a title that says "past".\nThe second door is green with a title that says "present". The third door is\nblue with a title that says "future". You need to collect the gems from each\nroom inorder to unlock the main door to get the treasure behind it.')
 
 
 while True:
     door  = input(f"Type title of door you want to go into: ").lower()
     if door == "past":
-        print("You are now in the past. Find the hidden gem to escape.")
+        print("You are now in the past. Find the pickaxe to mine the hidden gem to escape.")
     elif door == "present":
         print("You are now in the present. Defeat the boss to collect the gem")
     elif door == "future":
@@ -25,16 +28,88 @@ while True:
 #KT
 if door == "past":
     pickaxe = "pickaxe"
-    direction = input("You have 3 choices where do you want to go? (Cave, Forest, ): ").capitalize()
+    direction = input("You have 3 choices where do you want to go? (Cave, Forest, Volcano): ").tittle()
+    restart = ("you lost. restart past.")
+    while True:
+        print(direction)
+        while direction == "Cave":
+            places += 1
 
-    if direction == "Cave":
-        print("you chose cave. around you you see glowing crystals tucked into the rock, and when you turn a corner you see a huge flowing waterfall, stalagtites hang from above. Bright green moss covers the walls along with tall leafy plants with vibrant cherry red flowers. find a pickaxe to get the gem. *hint: you might find it in the other choices.")
-        if pickaxe in inventory:
-            look = input("you have 3 choices where do you want to look first (Waterfall, walls, plants): ").lower()
+            print("You chose cave. around you you see glowing crystals tucked into the rocks, and when you turn a corner you see a huge flowing waterfall, stalagtites hang from above. Bright green moss cover the walls along with tall leafy plants with vibrant cherry red flowers.")
+        
+            look = input("you have 3 choices where do you want to look first (Waterfall, Cavemen Art, Steam Vents ): ").lower()
+            print(look)
             if look == "waterfall":
-                print("You see gem")
-    elif direction == "Forest":
-        print()
+                waterfall = (input("Do you want to look in the (Pool) of water or (Behind) the waterfall?:")).lower()
+                print(waterfall)
+                if waterfall == "pool":
+                    print("you swim with the fishes. nothings there, go somewhere else.")
+                    print(look)
+                elif waterfall == "behind":
+                    print("you get soaked. All you see is a measly pile of gold but you leave it there because you don't want it.")
+                    print(look)
+            elif look == "steam vents":
+                print("the hot steam shoots up from the vents. you get burned.")
+                print(restart)
+                print(direction)
+                   
+            elif look ==  "cavemen art":
+                print("A bright golden crystal shines hidden in the eye of the painting. Use the pickaxe from you inventory to collect.")
+                if pickaxe not in inventory:
+                    no_pickaxe = (input("go to another room to find the pickaxe (Forest, Volcano):")).title()
+                    if no_pickaxe == "Forest":
+                        direction = "Forest"
+                            
+                    elif no_pickaxe == "Volcano":
+                        direction = "Volcano"
+                elif pickaxe in inventory:
+                    next_door = (input("You have collected the yellow gem go back to the main room to go through a different door, type (ok):")).lower
+                    gem += 1
+                    if next_door == "ok":
+                        print(direction)
+        while direction == "Forest":
+            
+            print(input("you chose Forest. a bright blue and pink sky blankets over you. tall, lucious trees loom above."))
+           
+            view = input("Where do you want to look first? (Nesting Ground, Tar Pit, Swamp").title()
+            print(view)
+            if view == "Nesting Ground":
+                reaction = (input("Your at the dinosour nesting grounds. you step on one of the eggs and a tyrannosaurus appears, angry. what will you do? (fight, run):")).lower
+                if reaction == "fight":
+                    print("when you fight the dino you almost die. but last minute you throw a stck and it gets stuck in its eye. You win!")
+                    print("collect your reward! you have recieved a pickaxe. now you will be able to collect your gem.")
+                    inventory.append(pickaxe)
+                    print(direction)
+                elif reaction == "run":
+                    print("you get so scared you run away. while your running you trip on a root and fall into a nest, crushing 3 more eggs when you land. the tyrannosaurus gets even more angry. Sadly you die.")
+                    print(restart)
+                    print(direction)
+            elif view == "Tar Pit":
+                print("oooh, wrong choice. When you go to the tar pits you fall in. so sad. you die.")
+                print(restart)
+                print(direction)
+            elif view == "Swamp":
+                options = ("when you get to the swamp will you (go in water) or (jump accross) the logs:").lower()
+                print(options)
+                if options == "go in water":
+                    print("when you go in the water you get a severe bacteria infection.")
+                    print(restart)
+                    print(direction)
+                elif options == "jump accross":
+                    print("you thought those were logs? there actually really hungry Deinosuchus (basically an alligator)")
+                    print(restart)
+                    print(direction)
+
+        while direction == "Volcano":
+            area = input("you've reached the volcano. where do you want to go? (Pumice Pit, Magma River)").title()
+            print(area)
+            if area == "pumice pits":
+                print("The deep ash pits were camoflouging raptor nests. One of them comes flying down and snatches you, it drops you off in the volcano.")
+            elif area == "Magma Rive":
+                print("you try to cross the flowing river of magma, but unfortunately your foot slips.")
+                print(restart)
+                print(direction)
+
 #EE
 if door == "present":
    revolver= "revolver"
