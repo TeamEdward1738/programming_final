@@ -35,7 +35,7 @@ if door == "past":
         while direction == "Cave":
             places += 1
 
-            print("You chose cave. around you you see glowing crystals tucked into the rocks, and when you turn a corner you see a huge flowing waterfall, stalagtites hang from above. Bright green moss cover the walls along with tall leafy plants with vibrant cherry red flowers.")
+            print("You chose cave. around you you see glowing crystals tucked into the rocks, and when you turn a corner you see a huge flowing waterfall, stalactites hang from above. Bright green moss cover the walls along with tall leafy plants with vibrant cherry red flowers.")
         
             look = input("you have 3 choices where do you want to look first (Waterfall, Cavemen Art, Steam Vents ): ").lower()
             print(look)
@@ -54,7 +54,7 @@ if door == "past":
                 print(direction)
                    
             elif look ==  "cavemen art":
-                print("A bright golden crystal shines hidden in the eye of the painting. Use the pickaxe from you inventory to collect.")
+                print("A bright golden crystal shines hidden in the eye of the painting. Use the pickaxe from your inventory to collect.")
                 if pickaxe not in inventory:
                     no_pickaxe = (input("go to another room to find the pickaxe (Forest, Volcano):")).title()
                     if no_pickaxe == "Forest":
@@ -69,19 +69,19 @@ if door == "past":
                         print(direction)
         while direction == "Forest":
             
-            print(input("you chose Forest. a bright blue and pink sky blankets over you. tall, lucious trees loom above."))
+            print(input("you chose Forest. a bright blue and pink sky blankets over you. tall, luscious trees loom above."))
            
             view = input("Where do you want to look first? (Nesting Ground, Tar Pit, Swamp").title()
             print(view)
             if view == "Nesting Ground":
-                reaction = (input("Your at the dinosour nesting grounds. you step on one of the eggs and a tyrannosaurus appears, angry. what will you do? (fight, run):")).lower
+                reaction = (input("You're at the dinosaur nesting grounds. you step on one of the eggs and a tyrannosaurus appears, angry. what will you do? (fight, run):")).lower
                 if reaction == "fight":
-                    print("when you fight the dino you almost die. but last minute you throw a stck and it gets stuck in its eye. You win!")
-                    print("collect your reward! you have recieved a pickaxe. now you will be able to collect your gem.")
+                    print("When you fight the dino you almost die. But last minute you throw a stick and it gets stuck in its eye. You win!")
+                    print("Collect your reward! you have received a pickaxe. Now you will be able to collect your gem.")
                     inventory.append(pickaxe)
                     print(direction)
                 elif reaction == "run":
-                    print("you get so scared you run away. while your running you trip on a root and fall into a nest, crushing 3 more eggs when you land. the tyrannosaurus gets even more angry. Sadly you die.")
+                    print("You get so scared you run away. while you're running you trip on a root and fall into a nest, crushing 3 more eggs when you land. the tyrannosaurus gets even more angry. Sadly you die.")
                     print(restart)
                     print(direction)
             elif view == "Tar Pit":
@@ -89,7 +89,7 @@ if door == "past":
                 print(restart)
                 print(direction)
             elif view == "Swamp":
-                options = ("when you get to the swamp will you (go in water) or (jump accross) the logs:").lower()
+                options = ("when you get to the swamp will you (go in water) or (jump across) the logs:").lower()
                 print(options)
                 if options == "go in water":
                     print("when you go in the water you get a severe bacteria infection.")
@@ -104,7 +104,9 @@ if door == "past":
             area = input("you've reached the volcano. where do you want to go? (Pumice Pit, Magma River)").title()
             print(area)
             if area == "pumice pits":
-                print("The deep ash pits were camoflouging raptor nests. One of them comes flying down and snatches you, it drops you off in the volcano.")
+                print("The deep ash pits were camouflaging raptor nests. One of them comes flying down and snatches you, it drops you off in the volcano.")
+                print (restart)
+                print(direction)
             elif area == "Magma Rive":
                 print("you try to cross the flowing river of magma, but unfortunately your foot slips.")
                 print(restart)
