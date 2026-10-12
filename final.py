@@ -6,6 +6,7 @@ inventory = []
 brown_gem = "brown gem"
 green_gem = "green gem"
 blue_gem = "blue gem"
+blue_gem_piece = "blue gem piece"
 
 # IA  
 
@@ -91,7 +92,7 @@ if door == "future":
                                 code = input("Type in code: ")
                                 if code == 379:
                                     print("Correct, in the safe you find a broken piece of a blue gem.")
-                                    blue_gem.append(inventory)
+                                    inventory.append(blue_gem_piece)
                                 else:
                                     print("That is incorrect.")
                                     continue
