@@ -283,4 +283,3 @@ if door == "future":
                                 else:
                                     print("Type in your choice as the number shown.")
                                     continue
->>>>>>> 18c7f2c9c1dac939bb9750852f697ca89ecdd16e
