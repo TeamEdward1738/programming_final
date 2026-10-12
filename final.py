@@ -3,6 +3,9 @@
 choices = []
 gems = []
 inventory = []
+brown_gem = "brown gem"
+green_gem = "green gem"
+blue_gem = "blue gem"
 
 # IA  
 
@@ -57,25 +60,38 @@ if door == "future":
         decition1 = input(f"You come to your first decition, left, right, or forward. What do you choose: ").lower()
         if decition1 == "left":
             while True:
-                decition11 = input("You come to a left or right decition. What do you choose: ").lower()
+                decition11 = input("You come to a left, right or back decition. What do you choose: ").lower()
                 if decition11 == "left":
+                    print("You are in a room with a (1)computer, (2)lamp, (3,4,5)desk with three drawers, (6)bed, (7)chair, and a (8)safe with three underscores blinking.")
                     while True:
-                        decition111 = input("You come to a left or right decition. What do you choose: ").lower()
-                        if decition111 == "left":
-                            print("You are in a room with a (1)computer, (2)lamp, (3,4,5)desk with three drawers, (6)bed, (7)chair, and a (8)safe with three underscores blinking.")
-                            while True:
-                                puzzle1 = input("What do you check: ")
-                                if puzzle1.isnumeric():
-                                    if puzzle1 in not_checked:
-                                        if puzzle1 == 4:
-                                            print("You see '__9'.")
-                                            continue
-                                        elif puzzle1 == 1:
-                                            print("You break apart the computer and behind the mother drive you see '3__'.")
-                                            continue
-                                        elif puzzle1 == 2:
-                                            print(nothing)
-                                            continue
+                        puzzle1 = input("What do you check: ")
+                        if puzzle1.isalpha():
+                            print("Type your choice as a number shown for your choice")
+                            continue
+                        else:
+                            if puzzle1 == 4:
+                                print("You see '__9'.")
+                                continue
+                            elif puzzle1 == 1:
+                                print("You break apart the computer and behind the mother drive you see '3__'.")
+                                continue
+                            elif puzzle1 == 2:
+                                print(nothing)
+                                continue
+                            elif puzzle1 == 3:
+                                print(nothing)
+                                continue
+                            elif puzzle1 == 5:
+                                print(nothing)
+                            elif puzzle1 == 6:
+                                print("You see '_7_'")
+                            elif puzzle1 == 7:
+                                print(nothing)
+                            elif puzzle1 == 8:
+                                code = input("Type in code: ")
+                                if code == 379:
+                                    print("Correct, in the safe you find a broken piece of a blue gem.")
+                                    blue_gem.append(inventory)
                                 else:
-                                    print("Type in your choice as the number shown.")
+                                    print("That is incorrect.")
                                     continue
