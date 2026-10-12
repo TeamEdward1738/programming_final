@@ -8,25 +8,12 @@ green_gem = "green gem"
 blue_gem = "blue gem"
 gem_piece = 0
 
-with open (inventory.txt, "r")
-
 def have_gem(gem):
     if gem in inventory:
         print("You are back in the main room.")
     else:
         print("You need to find the gem to exit this time line.")
 
-def choice(door):
-    door = input("Type title of door you want to go into: ").lower()
-    if door == "past":
-        print("You are now in the past. Find the hidden gem to escape.")
-    elif door == "present":
-        print("You are now in the present. Defeat the boss to collect the gem")
-    elif door == "future":
-        print("You are now in the future. You are in a room that has three doors, one rustic, on sivler, and one gold.")
-    else:
-        print("You need to type in one of the titles!")
-    return door
 # IA
 
 print('You wake up on a table with four different doors but one door has three colored\ngem shaped divots on it. The first divot is brown, the second is green and the\nthird is blue. All of the other doors are different colors with different titles\non it. The first door has cheetah print on it with a title that says "past".\nThe second door is green with a title that says "present". The third door is\nblue with a title that says "future". You need to collect the gems from each\nroom inorder to unlock the main door to get the treasure behind it.')
@@ -39,24 +26,6 @@ while True:
         print("You are now in the present. Defeat the boss to collect the gem")
     elif door == "future":
         print("You are now in the future. You are in a room that has three doors, one rustic, on silver, and one gold.")
-with open ("inventory.txt","r") as file:
-#    content = file.read()
-#    inventory = idk fix this later
-  
-
-print('You wake up on a table with four different doors but one door has three colored\ngem shaped divots on it. The first divot is yelloe, the second is green and the\nthird is blue. All of the other doors are different colors with different titles\non it. The first door has cheetah print on it with a title that says "past".\nThe second door is green with a title that says "present". The third door is\nblue with a title that says "future". You need to collect the gems from each\nroom inorder to unlock the main door to get the treasure behind it.')
-
-
-while True:
-    door  = input(f"Type title of door you want to go into: ").lower()
-    if door == "past":
-        print("You are now in the past. Find the pickaxe to mine the hidden gem to escape.")
-    elif door == "present":
-        print("You are now in the present. Defeat the boss to collect the gem")
-    elif door == "future":
-        print("You are now in the future. You look around and see tall silver walls all around you and see a path down and a bunch of left turns and right turns.")
-    else:
-        print("You need to type in one of the titles!")
         continue
     break
 
@@ -114,10 +83,7 @@ if door == "past":
         while direction == "Forest":
             view = input("Where do you want to look first? (Nesting Ground, Tar Pit, Swamp: )").title()
             print(f"you chose Forest. a bright blue and pink sky blankets over you. tall, luscious trees loom above. {view}")
-=======
-                    gem += 1
-                    if next_door == "ok":
-                        print(direction)
+            print(direction)
         while direction == "Forest":
             
             print(input("you chose Forest. a bright blue and pink sky blankets over you. tall, luscious trees loom above."))
@@ -182,10 +148,10 @@ if door == "present":
            looks = input("you have 3 choices where do you want to look first (Desk, Paintings, Flags ): ").lower() 
            
            print(looks)
-           if looks == "Desk":
                
 #CL
 if door == "future":
+    keys = 0
     room = input("What room do want to go to: ").lower()
     if room == "rustic":
         print("You are in a room with a (1)computer, (2)lamp, (3,4,5)desk with three drawers, (6)bed, (7)chair, and a (8)safe with three underscores blinking.")
@@ -226,73 +192,33 @@ if door == "future":
                     else:
                         print("That is incorrect.")
                         continue
-    elif 
-        while direction == "Volcano":
-            area = input("you've reached the volcano. where do you want to go? (Pumice Pit, Magma River)").title()
-            print(area)
-            if area == "pumice pits":
-                print("The deep ash pits were camouflaging raptor nests. One of them comes flying down and snatches you, it drops you off in the volcano.")
-                print (restart)
-                print(direction)
-            elif area == "Magma Rive"r:
-                print("you try to cross the flowing river of magma, but unfortunately your foot slips.")
-                print(restart)
-                print(direction)
-
-#EE
-if door == "present":
-   revolver= "revolver"
-   place=input("You have 3 choices where do you want to go?: Oval Office, Lincoln Monument, National Art Gallery")
-
-   if place == "Oval Office":
-      print("you chose oval office. around you you see an oval shaped room with a large desk, painting, and american flags find a revolver to get the gem. *hint: you might find it in the other choices")
-#CL
-if door == "future":
-    computer = 1
-    lamp = 2
-    top_drawer = 3
-    middle_drawer = 4
-    bottom_drawer = 5
-    bed = 6
-    chair = 7
-    not_checked = [1,2,3,4,5,6,7]
-    nothing = "You found nothing"
-    while True:
-        decition1 = input(f"You come to your first decition, left, right, or forward. What do you choose: ").lower()
-        if decition1 == "left":
-            while True:
-                decition11 = input("You come to a left, right or back decition. What do you choose: ").lower()
-                if decition11 == "left":
-                    print("You are in a room with a (1)computer, (2)lamp, (3,4,5)desk with three drawers, (6)bed, (7)chair, and a (8)safe with three underscores blinking.")
-                    while True:
-                        puzzle1 = input("What do you check: ")
-                        if puzzle1.isalpha():
-                            print("Type your choice as a number shown for your choice")
-                            continue
-                        else:
-                            if puzzle1 == 4:
-                                print("You see '__9'.")
-                                continue
-                            elif puzzle1 == 1:
-                                print("You break apart the computer and behind the mother drive you see '3__'.")
-                                continue
-                            elif puzzle1 == 2:
-                                print(nothing)
-                                continue
-                            elif puzzle1 == 3:
-                                print(nothing)
-                                continue
-                            elif puzzle1 == 5:
-                                print(nothing)
-                            elif puzzle1 == 6:
-                                print("You see '_7_'")
-                            elif puzzle1 == 7:
-                                print(nothing)
-                            elif puzzle1 == 8:
-                                code = input("Type in code: ")
-                                if code == 379:
-                                    print("Correct, in the safe you find a broken piece of a blue gem.")
-                                    inventory.append(blue_gem_piece)
-                                else:
-                                    print("That is incorrect.")
-                                    continue
+    elif room == "silver":
+        print("You are in a room with six different keys on a table and six different doors, one key is red, one is orange, one is yellow, one is green, one is blue, and on is purple. One door is yellow, one is tan, one is black, one is green, one is blue, and one is cyan. ")
+        while True:
+            puzzle2 = input("Which key do you put in each door, type like this 'color of key, color of door': ").lower()
+            if puzzle2 == "red, black":
+                print("Thats right.")
+                keys += 1
+                continue
+            elif puzzle2 == "orange, tan":
+                print("Thats right.")
+                keys += 1
+                continue
+            elif puzzle2 == "yellow, green":
+                print("Thats right.")
+                keys += 1
+                continue
+            elif puzzle2 == "green, yellow":
+                print("Thats right.")
+                keys += 1
+                continue
+            elif puzzle2 == "blue, cyan":
+                print("Thats right.")
+                keys += 1
+                continue
+            elif puzzle2 == "purple, blue":
+                print("Thats right.")
+                keys += 1
+                continue
+            elif keys == 6:
+                break
