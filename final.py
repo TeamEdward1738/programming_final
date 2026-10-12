@@ -118,7 +118,7 @@ if door == "present":
    place=input("You have 3 choices where do you want to go?: Oval Office, Lincoln Monument, National Art Gallery")
 
    if place == "Oval Office":
-      print("you chose oval office. around you you see find a revolver to get the gem. *hint: you might find it in the other choices")
+      print("you chose oval office. around you you see an oval shaped room with a large desk, painting, and american flags find a revolver to get the gem. *hint: you might find it in the other choices")
 #CL
 if door == "future":
     computer = 1
