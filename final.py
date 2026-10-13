@@ -138,7 +138,7 @@ directions = 0
 if door == "present":
    revolver= "revolver"
    place=input("You have 3 choices where do you want to go?: Oval Office, Lincoln Monument, National Art Gallery").title()
-   Restart = ("you lost. restart past")
+   Restart = ("you lost. restart present")
    while True:
       print(place)
       while place == "Oval Office":
@@ -148,7 +148,74 @@ if door == "present":
            looks = input("you have 3 choices where do you want to look first (Desk, Paintings, Flags ): ").lower() 
            
            print(looks)
-               
+
+           if looks == "Desk":
+               print("You search through the desk and find important papers and old documents.Nothing else is there.")
+
+           elif looks == "Paintings":
+               print ("You examine the presidential portaits and discover a hidden message pointing toward the Lincoln Monument.")
+         elif looks == "Flags":
+               print("You look behind the American flags and find nothing.")
+         place = input("Where do you want to go next? (Oval Office, Lincoln Monumnet, National Art Gallery: "). title()
+
+elif place == "Lincoln Monument":
+    directions += 1
+
+    print ("You chose the Lincoln Monument. A giant statue of Abraham Lincoln sits above you, surrounded by tall marble columns.")
+
+    looks = input("Where do you want to look first? (Statue, Steps, Columns): ").title()
+
+    if looks == "Statue":
+        print("You look behind the statue and discover a hidden revolver!")
+
+        if revolver not in inventory:
+            inventory.append(revolver)
+            print("You collected the revolver! You can now defend yourself at the National Art Gallery.")
+        else:
+            print("You already have the revolver.")
+
+    elif looks == "Steps":
+        print("You search the marble steps and find an old note about a secret room in the National Art Gallery.")
+    elif looks == "Columns":
+        print("You looks behind the columns and discover a map showing the way to the Natinal Art Gallert.")
+    place = input("Where do you want to go next? (Oval Office, Lincoln Monument, National Art Gallery):").title()
+
+elif place == "National Art Gallery":
+    directions += 1
+    
+    print("You enter the National Art Gallery. Paintings and sculptures fill the halls. Suddenly, Trump appears and guards a glowing green gem!")
+
+    if revolver not in inventory:
+        print("You don't have a revolver, so you aren't ready for the challenge.")
+        print("Go to the Lincoln Monument to find one!")
+        place = input("Where do you want to go? (Oval Office, Lincoln Monument, National Art Gallery)
+    else:
+        fight = input("Trump blocks your path to the green gem! Do you want to (Fight) or (Run)?:").title()
+
+if fight == "Fight":
+        print("You use your revolver to defend yourself and defeat Trump!")
+        print("You approach the glowing green gem and collect it!")
+
+         if "green_gem" not in inventory:
+         inventory.append("green_gem")
+         print("Congratulations! You collected the green gem!")
+
+         else:
+         print("You already collected the green gem.")
+         break
+    elif fight == "Run":
+        print("You run away from the challenge. You lose your chance to collect the gem.")
+        print(Restart)
+    break
+    else:
+        print("That is not a valid choice.")
+
+        place = "National Art Gallery"
+
+else:
+    print("That is not a valid location.")
+    place = input("Where do you want to go? (Oval Office , Lincoln Monument, National Art Gallery):").title()
+    
 #CL
 if door == "future":
     keys = 0
