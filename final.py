@@ -188,7 +188,7 @@ elif place == "National Art Gallery":
     if revolver not in inventory:
         print("You don't have a revolver, so you aren't ready for the challenge.")
         print("Go to the Lincoln Monument to find one!")
-        place = input("Where do you want to go? (Oval Office, Lincoln Monument, National Art Gallery)
+        place = input("Where do you want to go? (Oval Office, Lincoln Monument, National Art Gallery):")
     else:
         fight = input("Trump blocks your path to the green gem! Do you want to (Fight) or (Run)?:").title()
 
