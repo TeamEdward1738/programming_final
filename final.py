@@ -56,13 +56,16 @@ def have_gem(gem):
 
 #KT
 
+
 places = 0
 if door == "past":
     pickaxe = "pickaxe"
     direction = input("You have 3 choices where do you want to go? (Cave, Forest, Volcano): ").title()
 
+
 if door == "past":
     pickaxe = "pickaxe"
+    direction = input("You have 3 choices where do you want to go? (Cave, Forest, Volcano): ").title()
     direction = input("You have 3 choices where do you want to go? (Cave, Forest, Volcano): ").title()
     restart = ("you lost. restart past.")
     while True:
@@ -98,6 +101,7 @@ if door == "past":
                     if no_pickaxe == "Forest":
                         direction = "Forest"
                 
+                
                     elif no_pickaxe == "Volcano":
                         direction = "Volcano"
                 elif pickaxe in inventory:
@@ -108,6 +112,7 @@ if door == "past":
         while direction == "Forest":
             view = input("Where do you want to look first? (Nesting Ground, Tar Pit, Swamp: )").title()
             print(f"you chose Forest. a bright blue and pink sky blankets over you. tall, luscious trees loom above. {view}")
+            print(direction)
             print(direction)
         while direction == "Forest":
             
