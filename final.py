@@ -1,34 +1,36 @@
 #EE, IA, CL, KT The Game Final
-
+#IA
+with open ('inventory.txt', 'r') as file:
+    inventory = file.read()
+    print(inventory)
 choices = []
 gems = []
 inventory = []
-<<<<<<< HEAD
 yellow_gem = "yellow gem"
 green_gem = "green gem"
 blue_gem = "blue gem"
 gem_piece = 0
+choices = []
+keys = 0
 
-with open (inventory.txt, "r")
-
-def have_gem(gem):
-    if gem in inventory:
-        print("You are back in the main room.")
-    else:
-        print("You need to find the gem to exit this time line.")
-
-def choice(door):
-    door = input("Type title of door you want to go into: ").lower()
-    if door == "past":
-        print("You are now in the past. Find the hidden gem to escape.")
-    elif door == "present":
-        print("You are now in the present. Defeat the boss to collect the gem")
-    elif door == "future":
-        print("You are now in the future. You are in a room that has three doors, one rustic, on sivler, and one gold.")
-    else:
-        print("You need to type in one of the titles!")
-    return door
-# IA
+def duo_choice(key, door):
+    while True:
+        puzzle2 = input("What key do you put in what door. Type as (key, door): ").lower()
+        if puzzle2 == f"{key}, {door}" and keys != 6 and f"{door}" not in choices:
+            print("Thats right.")
+            keys += 1
+            choices.append(f"{door}")
+            continue
+        elif keys == 6:
+            print("All the doors open and in the black one, is a piece of a blue gem.")
+            gem_piece += 1
+            break
+        else:
+            print("That is wrong, you see all the keys disappear and reappear back on the table.")
+            keys = 0
+            choices = []
+            continue
+    return puzzle2
 
 print('You wake up on a table with four different doors but one door has three colored\ngem shaped divots on it. The first divot is brown, the second is green and the\nthird is blue. All of the other doors are different colors with different titles\non it. The first door has cheetah print on it with a title that says "past".\nThe second door is green with a title that says "present". The third door is\nblue with a title that says "future". You need to collect the gems from each\nroom inorder to unlock the main door to get the treasure behind it.')
                                
@@ -38,57 +40,40 @@ while True:
         print("You are now in the past. Find the hidden gem to escape.")
     elif door == "present":
         print("You are now in the present. Defeat the boss to collect the gem")
+        break
     elif door == "future":
         print("You are now in the future. You are in a room that has three doors, one rustic, on silver, and one gold.")
-=======
-with open ("inventory.txt","r") as file:
-#    content = file.read()
-#    inventory = idk fix this later
+        break
 
-# IA  
-
-print('You wake up on a table with four different doors but one door has three colored\ngem shaped divots on it. The first divot is yelloe, the second is green and the\nthird is blue. All of the other doors are different colors with different titles\non it. The first door has cheetah print on it with a title that says "past".\nThe second door is green with a title that says "present". The third door is\nblue with a title that says "future". You need to collect the gems from each\nroom inorder to unlock the main door to get the treasure behind it.')
-
-
-while True:
-    door  = input(f"Type title of door you want to go into: ").lower()
-    if door == "past":
-        print("You are now in the past. Find the pickaxe to mine the hidden gem to escape.")
-    elif door == "present":
-        print("You are now in the present. Defeat the boss to collect the gem")
-    elif door == "future":
-        print("You are now in the future. You look around and see tall silver walls all around you and see a path down and a bunch of left turns and right turns.")
->>>>>>> 18c7f2c9c1dac939bb9750852f697ca89ecdd16e
+def have_gem(gem):
+    if gem in inventory:
+        print("You are back in the main room.")
+        print(f"The {gem} fly's from your hand and goes into its colored divot.")
+        print(door)
     else:
-        print("You need to type in one of the titles!")
-        continue
-    break
+        print("You need to find the gem to exit this time line.")
+    return gem
 
 #KT
-<<<<<<< HEAD
+
 places = 0
 if door == "past":
     pickaxe = "pickaxe"
     direction = input("You have 3 choices where do you want to go? (Cave, Forest, Volcano): ").title()
-=======
+
 if door == "past":
     pickaxe = "pickaxe"
-    direction = input("You have 3 choices where do you want to go? (Cave, Forest, Volcano): ").tittle()
->>>>>>> 18c7f2c9c1dac939bb9750852f697ca89ecdd16e
+    direction = input("You have 3 choices where do you want to go? (Cave, Forest, Volcano): ").title()
     restart = ("you lost. restart past.")
     while True:
         print(direction)
         while direction == "Cave":
             places += 1
 
-<<<<<<< HEAD
-
             print("You chose cave. around you you see glowing crystals tucked into the rocks, and when you turn a corner you see a huge flowing waterfall, stalactites hang from above. Bright green moss cover the walls along with tall leafy plants with vibrant cherry red flowers.")
        
-=======
             print("You chose cave. around you you see glowing crystals tucked into the rocks, and when you turn a corner you see a huge flowing waterfall, stalactites hang from above. Bright green moss cover the walls along with tall leafy plants with vibrant cherry red flowers.")
         
->>>>>>> 18c7f2c9c1dac939bb9750852f697ca89ecdd16e
             look = input("you have 3 choices where do you want to look first (Waterfall, Cavemen Art, Steam Vents ): ").lower()
             print(look)
             if look == "waterfall":
@@ -96,11 +81,8 @@ if door == "past":
                 print(waterfall)
                 if waterfall == "pool":
                     print("you swim with the fishes. nothings there, go somewhere else.")
-<<<<<<< HEAD
                     print(look)   
-=======
                     print(look)
->>>>>>> 18c7f2c9c1dac939bb9750852f697ca89ecdd16e
                 elif waterfall == "behind":
                     print("you get soaked. All you see is a measly pile of gold but you leave it there because you don't want it.")
                     print(look)
@@ -115,33 +97,24 @@ if door == "past":
                     no_pickaxe = (input("go to another room to find the pickaxe (Forest, Volcano):")).title()
                     if no_pickaxe == "Forest":
                         direction = "Forest"
-<<<<<<< HEAD
-                           
-=======
-                            
->>>>>>> 18c7f2c9c1dac939bb9750852f697ca89ecdd16e
+                
                     elif no_pickaxe == "Volcano":
                         direction = "Volcano"
                 elif pickaxe in inventory:
                     next_door = (input("You have collected the yellow gem go back to the main room to go through a different door, type (ok):")).lower
-<<<<<<< HEAD
                     inventory.append("yellow_gem")
                     if next_door == "ok":
                         print(direction)
         while direction == "Forest":
             view = input("Where do you want to look first? (Nesting Ground, Tar Pit, Swamp: )").title()
             print(f"you chose Forest. a bright blue and pink sky blankets over you. tall, luscious trees loom above. {view}")
-=======
-                    gem += 1
-                    if next_door == "ok":
-                        print(direction)
+            print(direction)
         while direction == "Forest":
             
             print(input("you chose Forest. a bright blue and pink sky blankets over you. tall, luscious trees loom above."))
            
             view = input("Where do you want to look first? (Nesting Ground, Tar Pit, Swamp").title()
             print(view)
->>>>>>> 18c7f2c9c1dac939bb9750852f697ca89ecdd16e
             if view == "Nesting Ground":
                 reaction = (input("You're at the dinosaur nesting grounds. you step on one of the eggs and a tyrannosaurus appears, angry. what will you do? (fight, run):")).lower
                 if reaction == "fight":
@@ -160,20 +133,15 @@ if door == "past":
             elif view == "Swamp":
                 options = ("when you get to the swamp will you (go in water) or (jump across) the logs:").lower()
                 print(options)
-<<<<<<< HEAD
                 if options == "go in water": 
-=======
-                if options == "go in water":
->>>>>>> 18c7f2c9c1dac939bb9750852f697ca89ecdd16e
-                    print("when you go in the water you get a severe bacteria infection.")
+                    if options == "go in water":
+                        print("when you go in the water you get a severe bacteria infection.")
                     print(restart)
                     print(direction)
                 elif options == "jump accross":
                     print("you thought those were logs? there actually really hungry Deinosuchus (basically an alligator)")
                     print(restart)
                     print(direction)
-
-<<<<<<< HEAD
 
         while direction == "Volcano":
             area = input("you've reached the volcano. where do you want to go? (Pumice Pit, Magma River):").title()
@@ -186,29 +154,98 @@ if door == "past":
                 print("you try to cross the flowing river of magma, but unfortunately your foot slips.")
                 print(restart)
                 print(direction)
-have_gem(yellow_gem)
+        have_gem(yellow_gem)
 
 
 
 #EE
 directions = 0
+revolver = "revolver"
+place = input("You have 3 choices where do you want to go?: Oval Office, Lincoln Monument, National Art Gallery:").title()
+Restart = ("you lost. restart present")
 if door == "present":
-   revolver= "revolver"
-   place=input("You have 3 choices where do you want to go?: Oval Office, Lincoln Monument, National Art Gallery").title()
-   Restart = ("you lost. restart past")
-   while True:
-      print(place)
-      while place == "Oval Office":
-           directions += 1 
+    while True:
+        print(place)
+        if place == "Oval Office":
+            directions += 1 
            
-           print("you chose oval office. around you you see an oval shaped room with a large desk, paintings, and american flags find a revolver to get the gem. *hint: you might find it in the other choices")
-           looks = input("you have 3 choices where do you want to look first (Desk, Paintings, Flags ): ").lower() 
-           
-           print(looks)
-           if looks == "Desk":
-               
+            print("you chose oval office. around you you see an oval shaped room with a large desk, paintings, and american flags find a revolver to get the gem. *hint: you might find it in the other choices")
+            looks = input("you have 3 choices where do you want to look first (Desk, Paintings, Flags ): ").lower() 
+            
+            print(looks)
+
+            if looks == "Desk":
+                print("You search through the desk and find important papers and old documents.Nothing else is there.")
+
+            elif looks == "Paintings":
+                print ("You examine the presidential portaits and discover a hidden message pointing toward the Lincoln Monument.")
+            elif looks == "Flags":
+                print("You look behind the American flags and find nothing.")
+            place = input("Where do you want to go next? (Oval Office, Lincoln Monumnet, National Art Gallery: "). title()
+
+        elif place == "Lincoln Monument":
+            directions += 1
+
+            print ("You chose the Lincoln Monument. A giant statue of Abraham Lincoln sits above you, surrounded by tall marble columns.")
+
+            looks = input("Where do you want to look first? (Statue, Steps, Columns): ").title()
+
+            if looks == "Statue":
+                print("You look behind the statue and discover a hidden revolver!")
+
+                if revolver not in inventory:
+                    inventory.append(revolver)
+                    print("You collected the revolver! You can now defend yourself at the National Art Gallery.")
+                else:
+                    print("You already have the revolver.")
+
+            elif looks == "Steps":
+                print("You search the marble steps and find an old note about a secret room in the National Art Gallery.")
+            elif looks == "Columns":
+                print("You looks behind the columns and discover a map showing the way to the Natinal Art Gallert.")
+            place = input("Where do you want to go next? (Oval Office, Lincoln Monument, National Art Gallery):").title()
+
+        elif place == "National Art Gallery":
+            directions += 1
+            
+            print("You enter the National Art Gallery. Paintings and sculptures fill the halls. Suddenly, Trump appears and guards a glowing green gem!")
+
+            if revolver not in inventory:
+                print("You don't have a revolver, so you aren't ready for the challenge.")
+                print("Go to the Lincoln Monument to find one!")
+                place = input("Where do you want to go? (Oval Office, Lincoln Monument, National Art Gallery):")
+            else:
+                fight = input("Trump blocks your path to the green gem! Do you want to (Fight) or (Run)?:").title()
+
+                if fight == "Fight":
+                    print("You use your revolver to defend yourself and defeat Trump!")
+                    print("You approach the glowing green gem and collect it!")
+
+                if green_gem not in inventory:
+                    inventory.append(green_gem)
+                else:
+                    print("You already collected the green gem.")
+                    if fight == "Run":
+                        print("You run away from the challenge. You lose your chance to collect the gem.")
+                        print(Restart)    
+                    else:
+                        print("That is not a valid choice.")
+
+                        place = "National Art Gallery"
+                        print("That is not a valid location.")
+                        place = input("Where do you want to go? (Oval Office , Lincoln Monument, National Art Gallery):").title()
+    
 #CL
 if door == "future":
+    red = "red"
+    black = "black"
+    orange = "orange"
+    tan = "tan"
+    yellow = "yellow"
+    green = "green"
+    blue = "blue"
+    cyan = "cyan"
+    purple = "purple"
     room = input("What room do want to go to: ").lower()
     if room == "rustic":
         print("You are in a room with a (1)computer, (2)lamp, (3,4,5)desk with three drawers, (6)bed, (7)chair, and a (8)safe with three underscores blinking.")
@@ -249,62 +286,26 @@ if door == "future":
                     else:
                         print("That is incorrect.")
                         continue
-    elif 
-=======
-        while direction == "Volcano":
-            area = input("you've reached the volcano. where do you want to go? (Pumice Pit, Magma River)").title()
-            print(area)
-            if area == "pumice pits":
-                print("The deep ash pits were camouflaging raptor nests. One of them comes flying down and snatches you, it drops you off in the volcano.")
-                print (restart)
-                print(direction)
-            elif area == "Magma Rive":
-                print("you try to cross the flowing river of magma, but unfortunately your foot slips.")
-                print(restart)
-                print(direction)
-
-#EE
-if door == "present":
-   revolver= "revolver"
-   place=input("You have 3 choices where do you want to go?: Oval Office, Lincoln Monument, National Art Gallery")
-
-   if place == "Oval Office":
-      print("you chose oval office. around you you see an oval shaped room with a large desk, painting, and american flags find a revolver to get the gem. *hint: you might find it in the other choices")
-#CL
-if door == "future":
-    computer = 1
-    lamp = 2
-    top_drawer = 3
-    middle_drawer = 4
-    bottom_drawer = 5
-    bed = 6
-    chair = 7
-    not_checked = [1,2,3,4,5,6,7]
-    nothing = "You found nothing"
-    while True:
-        decition1 = input(f"You come to your first decition, left, right, or forward. What do you choose: ").lower()
-        if decition1 == "left":
-            while True:
-                decition11 = input("You come to a left or right decition. What do you choose: ").lower()
-                if decition11 == "left":
-                    while True:
-                        decition111 = input("You come to a left or right decition. What do you choose: ").lower()
-                        if decition111 == "left":
-                            print("You are in a room with a (1)computer, (2)lamp, (3,4,5)desk with three drawers, (6)bed, (7)chair, and a (8)safe with three underscores blinking.")
-                            while True:
-                                puzzle1 = input("What do you check: ")
-                                if puzzle1.isnumeric():
-                                    if puzzle1 in not_checked:
-                                        if puzzle1 == 4:
-                                            print("You see '__9'.")
-                                            continue
-                                        elif puzzle1 == 1:
-                                            print("You break apart the computer and behind the mother drive you see '3__'.")
-                                            continue
-                                        elif puzzle1 == 2:
-                                            print(nothing)
-                                            continue
-                                else:
-                                    print("Type in your choice as the number shown.")
-                                    continue
->>>>>>> 18c7f2c9c1dac939bb9750852f697ca89ecdd16e
+            if gem_piece == 2:
+                inventory.append(blue_gem)
+                print("You now have the blue gem.")
+    elif room == "silver":
+        print("You are in a room with six different keys on a table and six different doors, one key is red, one is orange, one is yellow, one is green, one is blue, and on is purple. One door is yellow, one is tan, one is black, one is green, one is blue, and one is cyan. ")
+        duo_choice(red, black)
+        duo_choice(orange, tan)
+        duo_choice(yellow, green)
+        duo_choice(green, yellow)
+        duo_choice(blue, cyan)
+        duo_choice(purple, blue)
+        if gem_piece == 2:
+            inventory.append(blue_gem)
+            print("You now have the blue gem")
+    elif room == "gold":
+        print("You die from falling into lava, you respawn at the beginning of future")
+        print(room)
+        choices = []
+        key = 0
+        gem_piece = 0
+    else:
+        print("That isn't one of the rooms")
+        print(room)
