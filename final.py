@@ -44,6 +44,8 @@ while True:
     elif door == "future":
         print("You are now in the future. You are in a room that has three doors, one rustic, on silver, and one gold.")
         break
+    else:
+        print("Type in one of the titles")
 
 def have_gem(gem):
     if gem in inventory:
@@ -314,3 +316,4 @@ if door == "future":
     else:
         print("That isn't one of the rooms")
         print(room)
+        have_gem(blue_gem)
