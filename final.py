@@ -46,7 +46,8 @@ while True:
         break
     else:
         print("Type in one of the titles")
-
+        continue
+         
 def have_gem(gem):
     if gem in inventory:
         print("You are back in the main room.")
