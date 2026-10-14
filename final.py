@@ -113,7 +113,7 @@ if door == "past":
                     next_door = (input("You have collected the yellow gem go back to the main room to go through a different door, type (ok):")).lower
                     inventory.append("yellow_gem")
                     if next_door == "ok":
-                        print(direction)
+                        print(door)
         while direction == "Forest":
             view = input("Where do you want to look first? (Nesting Ground, Tar Pit, Swamp: )").title()
             print(f"you chose Forest. a bright blue and pink sky blankets over you. tall, luscious trees loom above. {view}")
@@ -232,6 +232,7 @@ if door == "present":
 
                 if green_gem not in inventory:
                     inventory.append(green_gem)
+                    gems += 1
                 else:
                     print("You already collected the green gem.")
                     if fight == "Run":
@@ -286,7 +287,7 @@ if door == "future":
                         print("That is incorrect.")
                         continue
             if gem_piece == 2:
-                inventory.append(blue_gem)
+                inventory.append("blue_gem")
                 print("You now have the blue gem.")
     elif room == "silver":
         print("You are in a room with six different keys on a table and six different doors, one key is red, one is orange, one is yellow, one is green, one is blue, and on is purple. One door is yellow, one is tan, one is black, one is green, one is blue, and one is cyan. This puzzle is pretty easy even when your BLIND.")
@@ -297,8 +298,10 @@ if door == "future":
         duo_choice("blue", "cyan")
         duo_choice("purple", "blue")
         if gem_piece == 2:
-            inventory.append(blue_gem)
+            inventory.append("blue_gem")
+            gems += 1
             print("You now have the blue gem")
+            print(door)
     elif room == "gold":
         print("You die from falling into lava, you respawn at the beginning of future")
         print(room)
@@ -308,4 +311,7 @@ if door == "future":
     else:
         print("That isn't one of the rooms")
         print(room)
-    have_gem(blue_gem)
+    have_gem("blue_gem")
+
+if  gems == 3:
+    print("You're back in the main room and have escaped! Congragulations")
