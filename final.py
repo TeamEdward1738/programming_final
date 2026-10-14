@@ -49,7 +49,11 @@ while True:
     else:
         print("Type in one of the titles")
         continue
+<<<<<<< HEAD
 
+=======
+         
+>>>>>>> 0d8e6bf2d8e5faf0d18cfbaa0d161bd148897f75
 def have_gem(gem):
     if gem in inventory:
         print("You are back in the main room.")
@@ -311,7 +315,11 @@ if door == "future":
     else:
         print("That isn't one of the rooms")
         print(room)
+<<<<<<< HEAD
     have_gem("blue_gem")
 
 if  gems == 3:
     print("You're back in the main room and have escaped! Congragulations")
+=======
+        have_gem(blue_gem)
+>>>>>>> 0d8e6bf2d8e5faf0d18cfbaa0d161bd148897f75
