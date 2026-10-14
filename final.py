@@ -1,10 +1,11 @@
 #EE, IA, CL, KT The Game Final
 #IA
+
 with open ('inventory.txt', 'r') as file:
     inventory = file.read()
-    print(inventory)
+
 choices = []
-gems = []
+gems = 0
 inventory = []
 yellow_gem = "yellow gem"
 green_gem = "green gem"
@@ -16,15 +17,16 @@ keys = 0
 def duo_choice(key, door):
     while True:
         puzzle2 = input("What key do you put in what door. Type as (key, door): ").lower()
-        if puzzle2 == f"{key}, {door}" and keys != 6 and f"{door}" not in choices:
+        if puzzle2 == f"{key}, {door}" and f"{door}" not in choices:
             print("Thats right.")
             keys += 1
             choices.append(f"{door}")
-            continue
-        elif keys == 6:
-            print("All the doors open and in the black one, is a piece of a blue gem.")
-            gem_piece += 1
-            break
+            if keys == 6:
+                print("All the doors open and in the black one, is a piece of a blue gem.")
+                gem_piece += 1
+                break
+            else:
+                continue
         else:
             print("That is wrong, you see all the keys disappear and reappear back on the table.")
             keys = 0
@@ -44,6 +46,9 @@ while True:
     elif door == "future":
         print("You are now in the future. You are in a room that has three doors, one rustic, on silver, and one gold.")
         break
+    else:
+        print("Type in one of the titles")
+        continue
 
 def have_gem(gem):
     if gem in inventory:
@@ -52,7 +57,7 @@ def have_gem(gem):
         print(door)
     else:
         print("You need to find the gem to exit this time line.")
-    return gem
+    return gem 
 
 #KT
 
@@ -166,11 +171,10 @@ if door == "past":
 #EE
 directions = 0
 revolver = "revolver"
-place = input("You have 3 choices where do you want to go?: Oval Office, Lincoln Monument, National Art Gallery:").title()
 Restart = ("you lost. restart present")
 if door == "present":
     while True:
-        print(place)
+        place = input("You have 3 choices where do you want to go?: Oval Office, Lincoln Monument, National Art Gallery:").title()
         if place == "Oval Office":
             directions += 1 
            
@@ -239,18 +243,9 @@ if door == "present":
                         place = "National Art Gallery"
                         print("That is not a valid location.")
                         place = input("Where do you want to go? (Oval Office , Lincoln Monument, National Art Gallery):").title()
-    
+                    have_gem(green_gem)
 #CL
 if door == "future":
-    red = "red"
-    black = "black"
-    orange = "orange"
-    tan = "tan"
-    yellow = "yellow"
-    green = "green"
-    blue = "blue"
-    cyan = "cyan"
-    purple = "purple"
     room = input("What room do want to go to: ").lower()
     if room == "rustic":
         print("You are in a room with a (1)computer, (2)lamp, (3,4,5)desk with three drawers, (6)bed, (7)chair, and a (8)safe with three underscores blinking.")
@@ -258,7 +253,6 @@ if door == "future":
             puzzle1 = input("What do you check: ")
             if puzzle1.isalpha():
                 print("Type your choice as a number shown for your choice")
-                continue
             else:
                 if puzzle1 == 4:
                     print("You see '__9'.")
@@ -295,13 +289,13 @@ if door == "future":
                 inventory.append(blue_gem)
                 print("You now have the blue gem.")
     elif room == "silver":
-        print("You are in a room with six different keys on a table and six different doors, one key is red, one is orange, one is yellow, one is green, one is blue, and on is purple. One door is yellow, one is tan, one is black, one is green, one is blue, and one is cyan. ")
-        duo_choice(red, black)
-        duo_choice(orange, tan)
-        duo_choice(yellow, green)
-        duo_choice(green, yellow)
-        duo_choice(blue, cyan)
-        duo_choice(purple, blue)
+        print("You are in a room with six different keys on a table and six different doors, one key is red, one is orange, one is yellow, one is green, one is blue, and on is purple. One door is yellow, one is tan, one is black, one is green, one is blue, and one is cyan. This puzzle is pretty easy even when your BLIND.")
+        duo_choice("red", "black")
+        duo_choice("orange", "tan")
+        duo_choice("yellow", "green")
+        duo_choice("green", "yellow")
+        duo_choice("blue", "cyan")
+        duo_choice("purple", "blue")
         if gem_piece == 2:
             inventory.append(blue_gem)
             print("You now have the blue gem")
@@ -314,3 +308,4 @@ if door == "future":
     else:
         print("That isn't one of the rooms")
         print(room)
+    have_gem(blue_gem)
